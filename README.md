@@ -1,3 +1,20 @@
 # dnf-plugin-ovl
-workaround to run dnf on overlayfs, for details see [man yum-vol](http://man7.org/linux/man-pages/man1/yum-ovl.1.html).
+workaround to run dnf on overlayfs. A port of yum-plugin-ovl to dnf.
 
+## When you need it
+Running dnf (or yum or rpm) within inside overlayfs (for example inside docker) will result in errors similar to 
+```
+rpmdb: BDB0060 PANIC: fatal region error detected; run recovery
+```
+as soon as you run dnf on different layers.
+
+
+## Background
+
+Opening a file on OverlayFS in read-only mode causes the file from
+lower layer to be opened, then later on, if the same file is opened
+in write mode, a copy-up into the upper    layer    takes    place,
+resulting into a new file being opened.
+Since dnf opens the RPMdb first read-only, and then
+also with write access, we need to copy-up the files beforehand to
+make sure that the access is consistent.
