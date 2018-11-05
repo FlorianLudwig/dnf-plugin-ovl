@@ -13,7 +13,7 @@ BuildRequires: python3-devel
 Requires: python3-dnf
 
 %description
-TBD
+Workaround to run dnf on overlayfs. A port of yum-plugin-ovl to dnf.
 
 %prep
 %autosetup
