@@ -7,6 +7,10 @@ License: GPLv2+
 
 Source0: https://github.com/FlorianLudwig/dnf-plugin-ovl/archive/%{version}.tar.gz
 
+BuildRequires: python3-devel
+
+Requires: python3-dnf
+
 %description
 TBD
 
