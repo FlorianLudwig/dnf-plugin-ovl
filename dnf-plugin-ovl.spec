@@ -22,12 +22,11 @@ TBD
 
 
 %install
-mkdir -p %{buildroot}/%{python3_sitelib}/dnf-plugins/
-cp ovl.py %{buildroot}/%{python3_sitelib}/dnf-plugins/ovl.py
+install -D -p ovl.py %{buildroot}/%{python3_sitelib}/dnf-plugins/ovl.py
 
 %files
 %{python3_sitelib}/dnf-plugins/ovl.py
-%{python3_sitelib}/dnf-plugins/__pycache__/ovl.cpython-36.pyc
-%{python3_sitelib}/dnf-plugins/__pycache__/ovl.cpython-36.opt-1.pyc
+%{python3_sitelib}/dnf-plugins/__pycache__/ovl.*
+%{python3_sitelib}/dnf-plugins/__pycache__/ovl.*
 
 %changelog
