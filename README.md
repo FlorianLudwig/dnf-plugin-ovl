@@ -18,3 +18,10 @@ resulting into a new file being opened.
 Since dnf opens the RPMdb first read-only, and then
 also with write access, we need to copy-up the files beforehand to
 make sure that the access is consistent.
+
+## Building
+
+```
+spectool -g -R dnf-plugin-ovl.spec
+rpmbuild --target noarch --clean -v -bb dnf-plugin-ovl.spec 
+```
