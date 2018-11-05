@@ -7,14 +7,13 @@ License: GPLv2+
 
 Source0: https://github.com/FlorianLudwig/dnf-plugin-ovl/archive/%{version}.tar.gz
 
+BuildArch: noarch
 BuildRequires: python3-devel
 
 Requires: python3-dnf
 
 %description
 TBD
-
-%global debug_package %{nil}
 
 %prep
 %autosetup
