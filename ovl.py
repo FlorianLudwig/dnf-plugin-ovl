@@ -1,5 +1,5 @@
 # Copyright (C) 2015  Red Hat, Inc.
-#               2018  Florian Ludwig
+#               2018  Grey Rook GmbH
 #
 # Authors: Pavel Odvody <podvody@redhat.com>
 #          Florian Ludwig <f.ludwig@greyrook.com>
