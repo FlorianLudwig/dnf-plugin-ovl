@@ -8,6 +8,12 @@ rpmdb: BDB0060 PANIC: fatal region error detected; run recovery
 ```
 as soon as you run dnf on different layers.
 
+## Install
+
+It is included in Fedora's repository:
+```
+dnf install -y dnf-plugin-ovl
+```
 
 ## Background
 
