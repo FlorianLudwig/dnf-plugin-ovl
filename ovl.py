@@ -15,9 +15,10 @@
 # Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 # 02110-1301, USA.
 
-import dnf
-import logging
 from os import utime, walk, path
+import logging
+
+import dnf
 
 
 def should_touch():
@@ -49,4 +50,4 @@ class OVLPlugin(dnf.Plugin):
                     with open(p, 'a'):
                         utime(p, None)
         except Exception as e:
-            logging.error("Error while doing RPMdb copy-up:\n%s" % e)
+            logging.error("Error while doing RPMdb copy-up:\n%s", e)
