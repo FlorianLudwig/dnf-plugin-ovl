@@ -41,7 +41,8 @@ class OVLPlugin(dnf.Plugin):
         if not should_touch():
             return
 
-        logging.info('OverlayFS detected')
+        logger = logging.getLogger('dnf.plugin')
+        logger.info('OverlayFS detected')
         rpmdb_path = base.conf.installroot + 'var/lib/rpm/'
         try:
             for root, _, files in walk(rpmdb_path):
@@ -50,4 +51,4 @@ class OVLPlugin(dnf.Plugin):
                     with open(p, 'a'):
                         utime(p, None)
         except Exception as e:
-            logging.error("Error while doing RPMdb copy-up:\n%s", e)
+            logger.error("Error while doing RPMdb copy-up:\n%s", e)
