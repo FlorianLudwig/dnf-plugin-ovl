@@ -1,5 +1,5 @@
 Name:    dnf-plugin-ovl
-Version: 0.0.1
+Version: 0.0.3
 Release: 2%{?dist}
 Summary: GNU Hello
 URL:     https://github.com/FlorianLudwig/dnf-plugin-ovl
