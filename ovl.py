@@ -35,6 +35,7 @@ def should_touch():
 
 class OVLPlugin(dnf.Plugin):
     """workaround OverlayFS non compliance with posix"""
+    name = "ovl"
 
     def __init__(self, base, cli):
         super(OVLPlugin, self).__init__(base, cli)
