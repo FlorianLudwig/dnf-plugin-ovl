@@ -2,9 +2,13 @@
 workaround to run dnf on overlayfs. A port of yum-plugin-ovl to dnf.
 
 ## When you need it
-Running dnf (or yum or rpm) within inside overlayfs (for example inside docker) will result in errors similar to 
+Running dnf (or yum or rpm) within inside overlayfs (for example inside docker) will result in errors similar to
 ```
 rpmdb: BDB0060 PANIC: fatal region error detected; run recovery
+```
+or
+```
+error: rpmdbNextIterator: skipping h# 173 blob size(4836): BAD, 8 + 16 * il(70) + dl(3708)
 ```
 as soon as you run dnf on different layers.
 
@@ -29,5 +33,5 @@ make sure that the access is consistent.
 
 ```
 spectool -g -R dnf-plugin-ovl.spec
-rpmbuild --target noarch --clean -v -bb dnf-plugin-ovl.spec 
+rpmbuild --clean -v -bb dnf-plugin-ovl.spec
 ```
