@@ -1,7 +1,7 @@
 Name:    dnf-plugin-ovl
 Version: 0.0.4
 Release: 1%{?dist}
-Summary: GNU Hello
+Summary: Workaround to run dnf on overlayfs
 URL:     https://github.com/FlorianLudwig/dnf-plugin-ovl
 License: GPLv2+
 

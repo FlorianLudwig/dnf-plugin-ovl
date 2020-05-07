@@ -32,6 +32,7 @@ make sure that the access is consistent.
 ## Building
 
 ```
+rpmbuild --nobuild --nodeps dnf-plugin-ovl.spec  # Will fail, but creates missing dirs on new machine
 spectool -g -R dnf-plugin-ovl.spec
 rpmbuild --clean -v -bb dnf-plugin-ovl.spec
 ```
