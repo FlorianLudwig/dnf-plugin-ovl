@@ -20,14 +20,12 @@ Workaround to run dnf on overlayfs. A port of yum-plugin-ovl to dnf.
 
 %build
 
-
 %install
-install -D -p ovl.py %{buildroot}/%{python3_sitelib}/dnf-plugins/ovl.py
+install -D -m 644 -p ovl.py %{buildroot}/%{python3_sitelib}/dnf-plugins/ovl.py
 
 %files
 %{python3_sitelib}/dnf-plugins/ovl.py
-%{python3_sitelib}/dnf-plugins/__pycache__/ovl.*
-%{python3_sitelib}/dnf-plugins/__pycache__/ovl.*
+%{python3_sitelib}/dnf-plugins/__pycache__/ovl.*.pyc
 
 %changelog
 * Thu May 07 2020 Aaron D. Marasco <dnf-plugin-ovl@marascos.net> - 0.0.4-1
