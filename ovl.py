@@ -26,9 +26,10 @@ def should_touch():
     Touch the files only once we've verified that
     we're on overlay mount
     """
-    with open('/etc/mtab') as f:
-        line = f.readline()
-        return line and line.startswith('overlay /')
+    with open('/etc/mtab') as mtab:
+        for line in mtab:
+            if line.split()[1] == '/':  # Check rootfs only
+                return 'overlay' in line  # Some images say "overlay" and others "overlayfs"
     return False
 
 
