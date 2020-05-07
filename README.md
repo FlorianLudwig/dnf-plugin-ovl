@@ -22,7 +22,7 @@ dnf install -y dnf-plugin-ovl
 ```
 dnf updateinfo -v
 ```
-Should show (second line only if an overlayfs system detected:
+Should show (second line only if an overlayfs system detected):
 ```
 Loaded plugins: ..., ovl, ...
 OverlayFS detected
