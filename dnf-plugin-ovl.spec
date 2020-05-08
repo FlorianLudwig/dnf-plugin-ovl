@@ -1,7 +1,7 @@
 Name:    dnf-plugin-ovl
-Version: 0.0.3
-Release: 2%{?dist}
-Summary: GNU Hello
+Version: 0.0.4
+Release: 1%{?dist}
+Summary: Workaround to run dnf on overlayfs
 URL:     https://github.com/FlorianLudwig/dnf-plugin-ovl
 License: GPLv2+
 
@@ -20,16 +20,17 @@ Workaround to run dnf on overlayfs. A port of yum-plugin-ovl to dnf.
 
 %build
 
-
 %install
-install -D -p ovl.py %{buildroot}/%{python3_sitelib}/dnf-plugins/ovl.py
+install -D -m 644 -p ovl.py %{buildroot}/%{python3_sitelib}/dnf-plugins/ovl.py
 
 %files
 %{python3_sitelib}/dnf-plugins/ovl.py
-%{python3_sitelib}/dnf-plugins/__pycache__/ovl.*
-%{python3_sitelib}/dnf-plugins/__pycache__/ovl.*
+%{python3_sitelib}/dnf-plugins/__pycache__/ovl.*.pyc
 
 %changelog
+* Thu May 07 2020 Aaron D. Marasco <dnf-plugin-ovl@marascos.net> - 0.0.4-1
+- Fix overlayfs detection on CentOS 8 / RHEL 8 / Red Hat's UBI images
+
 * Mon Nov 05 2018 Till Hofmann <thofmann@fedoraproject.org> - 0.0.1-2
 - Add missing Requires and BuildRequires
 - Make package noarch
